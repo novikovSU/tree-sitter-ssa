@@ -1,0 +1,1865 @@
+{
+  "name": "ssa",
+  "rules": {
+    "ssa": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "section"
+      }
+    },
+    "section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_info"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_styles"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_events"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_fonts"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_graphics"
+        }
+      ]
+    },
+    "section_info": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_info_name"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "info_body_row"
+          }
+        }
+      ]
+    },
+    "section_info_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "Script Info"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "section_styles": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_styles_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_row"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "styles_body_row"
+          }
+        }
+      ]
+    },
+    "section_styles_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "V4 Styles"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "section_events": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_events_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_row"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "events_body_row"
+          }
+        }
+      ]
+    },
+    "section_events_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "Events"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "section_fonts": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_fonts_name"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "fonts_body_row"
+          }
+        }
+      ]
+    },
+    "section_fonts_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "[Fonts]"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "section_graphics": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "section_graphics_name"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "graphics_body_row"
+          }
+        }
+      ]
+    },
+    "section_graphics_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "Graphics"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "styles_header_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_font_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_font_size"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_primary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_secondary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_tertiary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_back_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_bold"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_italic"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_border_style"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_outline"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_shadow"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_alignment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_alpha_level"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "styles_header_encoding"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "styles_header_name": {
+      "type": "STRING",
+      "value": "Format: Name"
+    },
+    "styles_header_font_name": {
+      "type": "STRING",
+      "value": "Fontname"
+    },
+    "styles_header_font_size": {
+      "type": "STRING",
+      "value": "Fontsize"
+    },
+    "styles_header_primary_color": {
+      "type": "STRING",
+      "value": "PrimaryColour"
+    },
+    "styles_header_secondary_color": {
+      "type": "STRING",
+      "value": "SecondaryColour"
+    },
+    "styles_header_tertiary_color": {
+      "type": "STRING",
+      "value": "TertiaryColour"
+    },
+    "styles_header_back_color": {
+      "type": "STRING",
+      "value": "BackColour"
+    },
+    "styles_header_bold": {
+      "type": "STRING",
+      "value": "Bold"
+    },
+    "styles_header_italic": {
+      "type": "STRING",
+      "value": "Italic"
+    },
+    "styles_header_border_style": {
+      "type": "STRING",
+      "value": "BorderStyle"
+    },
+    "styles_header_outline": {
+      "type": "STRING",
+      "value": "Outline"
+    },
+    "styles_header_shadow": {
+      "type": "STRING",
+      "value": "Shadow"
+    },
+    "styles_header_alignment": {
+      "type": "STRING",
+      "value": "Alignment"
+    },
+    "styles_header_margin_l": {
+      "type": "STRING",
+      "value": "MarginL"
+    },
+    "styles_header_margin_r": {
+      "type": "STRING",
+      "value": "MarginR"
+    },
+    "styles_header_margin_v": {
+      "type": "STRING",
+      "value": "MarginV"
+    },
+    "styles_header_alpha_level": {
+      "type": "STRING",
+      "value": "AlphaLevel"
+    },
+    "styles_header_encoding": {
+      "type": "STRING",
+      "value": "Encoding"
+    },
+    "styles_body_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Style"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_font_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_font_size"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_primary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_secondary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_tertiary_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_back_color"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_bold"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_italic"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_border_style"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_outline"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_shadow"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_alignment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_alpha_level"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_encoding"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "style_name": {
+      "type": "PATTERN",
+      "value": "\\w+"
+    },
+    "style_font_name": {
+      "type": "PATTERN",
+      "value": "[A-Za-z\\s]+"
+    },
+    "style_font_size": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_primary_color": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_secondary_color": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_tertiary_color": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_back_color": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_bold": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_italic": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_border_style": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_outline": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_shadow": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_alignment": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_margin_l": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_margin_r": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_margin_v": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_alpha_level": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "style_encoding": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "events_header_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "events_header_format"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_style"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_effect"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "events_header_text"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "events_header_format": {
+      "type": "STRING",
+      "value": "Format: Marked"
+    },
+    "events_header_start": {
+      "type": "STRING",
+      "value": "Start"
+    },
+    "events_header_end": {
+      "type": "STRING",
+      "value": "End"
+    },
+    "events_header_style": {
+      "type": "STRING",
+      "value": "Style"
+    },
+    "events_header_name": {
+      "type": "STRING",
+      "value": "Name"
+    },
+    "events_header_margin_l": {
+      "type": "STRING",
+      "value": "MarginL"
+    },
+    "events_header_margin_r": {
+      "type": "STRING",
+      "value": "MarginR"
+    },
+    "events_header_margin_v": {
+      "type": "STRING",
+      "value": "MarginV"
+    },
+    "events_header_effect": {
+      "type": "STRING",
+      "value": "Effect"
+    },
+    "events_header_text": {
+      "type": "STRING",
+      "value": "Text"
+    },
+    "_comma": {
+      "type": "PATTERN",
+      "value": "\\s*,\\s*"
+    },
+    "info_body_row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "info_comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "info_prop"
+        }
+      ]
+    },
+    "info_comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": ";"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          },
+          {
+            "type": "STRING",
+            "value": "\n"
+          }
+        ]
+      }
+    },
+    "info_prop": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "info_prop_name"
+        },
+        {
+          "type": "STRING",
+          "value": ": "
+        },
+        {
+          "type": "SYMBOL",
+          "name": "info_prop_value"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "info_prop_name": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "Title"
+        },
+        {
+          "type": "STRING",
+          "value": "OriginalScript"
+        },
+        {
+          "type": "STRING",
+          "value": "OriginalTranslation"
+        },
+        {
+          "type": "STRING",
+          "value": "OriginalEditing"
+        },
+        {
+          "type": "STRING",
+          "value": "OriginalTiming"
+        },
+        {
+          "type": "STRING",
+          "value": "SynchPoint"
+        },
+        {
+          "type": "STRING",
+          "value": "ScriptUpdatedBy"
+        },
+        {
+          "type": "STRING",
+          "value": "UpdateDetails"
+        },
+        {
+          "type": "STRING",
+          "value": "ScriptType"
+        },
+        {
+          "type": "STRING",
+          "value": "Collisions"
+        },
+        {
+          "type": "STRING",
+          "value": "PlayResY"
+        },
+        {
+          "type": "STRING",
+          "value": "PlayResX"
+        },
+        {
+          "type": "STRING",
+          "value": "PlayDepth"
+        },
+        {
+          "type": "STRING",
+          "value": "Timer"
+        },
+        {
+          "type": "STRING",
+          "value": "WrapStyle"
+        },
+        {
+          "type": "STRING",
+          "value": "ScaledBorderAndShadow"
+        }
+      ]
+    },
+    "info_prop_value": {
+      "type": "PATTERN",
+      "value": ".+"
+    },
+    "events_body_row": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_dialogue_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_comment_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_picture_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_sound_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_movie_row"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_command_row"
+        }
+      ]
+    },
+    "event_dialogue_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_dialogue"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_dialogue": {
+      "type": "STRING",
+      "value": "Dialogue"
+    },
+    "event_comment_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_comment"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_comment": {
+      "type": "STRING",
+      "value": "Comment"
+    },
+    "event_picture_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_picture"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_picture": {
+      "type": "STRING",
+      "value": "Picture"
+    },
+    "event_sound_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_sound"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_sound": {
+      "type": "STRING",
+      "value": "Sound"
+    },
+    "event_movie_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_movie"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_movie": {
+      "type": "STRING",
+      "value": "Movie"
+    },
+    "event_command_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "event_type_command"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*:\\s*"
+        },
+        {
+          "type": "STRING",
+          "value": "Marked"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s*=\\s*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_is_marked"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_style"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_name"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_l"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_r"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "event_margin_v"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_effect"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_comma"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "event_text"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "event_type_command": {
+      "type": "STRING",
+      "value": "Command"
+    },
+    "event_is_marked": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "0"
+        },
+        {
+          "type": "STRING",
+          "value": "1"
+        }
+      ]
+    },
+    "event_start": {
+      "type": "PATTERN",
+      "value": "\\d{1,2}:\\d{2}:\\d{2}[:\\.]\\d{1,2}"
+    },
+    "event_end": {
+      "type": "PATTERN",
+      "value": "\\d{1,2}:\\d{2}:\\d{2}[:\\.]\\d{1,2}"
+    },
+    "event_style": {
+      "type": "PATTERN",
+      "value": "[\\w\\-]+"
+    },
+    "event_name": {
+      "type": "PATTERN",
+      "value": "[\\w\\-]+"
+    },
+    "event_margin_l": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "event_margin_r": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "event_margin_v": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "event_effect": {
+      "type": "PATTERN",
+      "value": "[\\w\\-]+"
+    },
+    "event_text": {
+      "type": "PATTERN",
+      "value": ".+"
+    },
+    "fonts_body_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "aaa"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "graphics_body_row": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bbb"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
